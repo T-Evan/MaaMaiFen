@@ -1,0 +1,207 @@
+{
+  "登录": {
+    "recognition": "OCR",
+    "expected": "开始冒险之旅",
+    "action": "Click",
+    "next": [
+      "选择角色"
+    ]
+  },
+  "选择角色": {
+    "recognition": "OCR",
+    "expected": "开始冒险",
+    "action": "Click",
+    "next": [
+      "跳过登录动画"
+    ]
+  },
+  "跳过登录动画": {
+    "recognition": "OCR",
+    "expected": "离线奖励",
+    "next": [
+      "领取离线奖励1"
+    ]
+  },
+  "领取离线奖励1": {
+    "recognition": "OCR",
+    "expected": "点击空白处",
+    "action": "Click",
+    "next": [
+      "领取离线奖励2"
+    ]
+  },
+  "领取离线奖励2": {
+    "recognition": "OCR",
+    "expected": "点击空白处",
+    "action": "Click",
+    "next": [
+    ]
+  },
+  "首页-冒险-跳转": {
+    "recognition": "TemplateMatch",
+    "template": [
+      "首页-冒险.png",
+      "首页-冒险-2.png"
+    ],
+    "threshold": [
+      0.3,
+      0.3
+    ],
+    "method": 3,
+    "action": "Click",
+    "roi": [
+      295,
+      1437,
+      115,
+      128
+    ]
+  },
+  "返回": {
+    "is_sub": true,
+    "threshold": 0.5,
+    "recognition": "TemplateMatch",
+    "template": [
+      "返回.png"
+    ],
+    "action": "Click"
+  },
+  "返回-单次": {
+    "threshold": 0.5,
+    "recognition": "TemplateMatch",
+    "template": [
+      "返回.png"
+    ],
+    "action": "Click"
+  },
+  "开始匹配": {
+    "recognition": "TemplateMatch",
+    "template": "开始匹配.png",
+    "action": "Click"
+  },
+  "准备": {
+    "recognition": "TemplateMatch",
+    "template": "准备.png",
+    "threshold": 0.65,
+    "roi": [24, 411, 670, 990],
+    "action": "Click"
+  },
+  "匹配中": {
+    "recognition": "OCR",
+    "expected": "匹配中",
+    "roi": [
+      246,
+      846,
+      220,
+      88
+    ],
+    "action": "Click"
+  },
+  "取消": {
+    "recognition": "TemplateMatch",
+    "template": "取消.png",
+    "roi": [
+      131,
+      907,
+      158,
+      48
+    ],
+    "action": "Click"
+  },
+  "确定": {
+    "recognition": "TemplateMatch",
+    "template": "确定.png",
+    "threshold": 0.85,
+    "action": "Click"
+  },
+  "确认": {
+    "recognition": "TemplateMatch",
+    "template": "确认.png",
+    "threshold": 0.85,
+    "action": "Click"
+  },
+  "放弃": {
+    "recognition": "TemplateMatch",
+    "template": "放弃.png",
+    "threshold": 0.85,
+    "action": "Click",
+    "next": [
+      "确定"
+    ]
+  },
+  "离开队伍": {
+    "recognition": "TemplateMatch",
+    "template": "离开队伍.png",
+    "action": "Click",
+    "next": [
+      "确定"
+    ]
+  },
+  "战斗中": {
+    "recognition": "TemplateMatch",
+    "template": "挑战中-麦克风.png",
+    "threshold": 0.4,
+    "roi": [
+      572,
+      237,
+      142,
+      343
+    ],
+    "next": [
+      "战败确认",
+      "领取宝箱-开启宝箱",
+      "领取宝箱-体力不足"
+    ]
+  },
+  "战斗-等待结束": {
+    "next": [
+      "战败确认",
+      "领取宝箱-开启宝箱",
+      "领取宝箱-体力不足"
+    ]
+  },
+  "战败确认": {
+    "recognition": "OCR",
+    "expected": "被击败了",
+    "roi": [
+      155,
+      539,
+      480,
+      116
+    ]
+  },
+  "领取宝箱-开启宝箱": {
+    "recognition": "TemplateMatch",
+    "template": "宝箱-开启.png|宝箱-开启-2.png",
+    "action": "Click",
+    "next": [
+      "返回-单次"
+    ]
+  },
+  "领取宝箱-体力不足": {
+    "recognition": "TemplateMatch",
+    "template": "宝箱-体力不足.png",
+    "next": [
+      "领取宝箱-体力不足-返回"
+    ]
+  },
+  "领取宝箱-体力不足-返回": {
+    "is_sub": true,
+    "threshold": 0.5,
+    "recognition": "TemplateMatch",
+    "template": [
+      "返回.png"
+    ],
+    "action": "Click",
+    "next": [
+      "确定"
+    ]
+  },
+  "点击空白处": {
+    "recognition": "OCR",
+    "expected": "点击空白处",
+    "roi": [232, 1456, 267, 125
+    ],
+    "action": "Click"
+  },
+  "停止": {}
+}

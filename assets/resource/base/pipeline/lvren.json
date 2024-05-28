@@ -1,0 +1,41 @@
+{
+  "首页-旅人-标识": {
+    "is_sub": true,
+    "next": [
+      "返回",
+      "首页-旅人-跳转"
+    ]
+  },
+  "首页-旅人-跳转": {
+    "recognition": "OCR",
+    "expect": "旅人",
+    "roi": [
+      427,
+      1444,
+      115,
+      126
+    ],
+    "action": "Click"
+  },
+  "技能升级": {
+    "recognition": "TemplateMatch",
+    "template": "技能-升级.png",
+    "action": "Click",
+    "next": ["升级-完成","升1级"]
+  },
+  "升1级": {
+    "is_sub": true,
+    "times_limit": 3,
+    "recognition": "OCR",
+    "expect": "升1级",
+    "roi": [248, 1195, 227, 67],
+    "action": "Click",
+    "runout_next": ["返回-单次"]
+  },
+  "升级-完成": {
+    "recognition": "TemplateMatch",
+    "template": "升级-完成.png",
+    "roi": [223, 1178, 271, 94],
+    "next": ["返回-单次"]
+  }
+}

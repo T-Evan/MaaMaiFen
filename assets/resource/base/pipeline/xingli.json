@@ -1,0 +1,31 @@
+{
+  "首页-行李-标识": {
+    "is_sub": true,
+    "next": [
+      "返回",
+      "首页-行李-跳转"
+    ]
+  },
+  "首页-行李-跳转": {
+    "recognition": "OCR",
+    "expect": "行李",
+    "roi": [
+      182,
+      1442,
+      106,
+      112
+    ],
+    "action": "Click"
+  },
+  "一键强化": {
+    "recognition": "TemplateMatch",
+    "template": "行李-一键强化.png",
+    "roi": [
+      450,
+      440,
+      137,
+      118
+    ],
+    "action": "Click"
+  }
+}

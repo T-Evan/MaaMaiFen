@@ -1,0 +1,101 @@
+{
+  "首页-冒险-标识": {
+    "is_sub": true,
+    "next": [
+      "返回",
+      "首页-冒险-跳转"
+    ]
+  },
+  "首页-试炼-跳转": {
+    "timeout": 3000,
+    "recognition": "TemplateMatch",
+    "template": "首页-试炼.png",
+    "roi": [
+      598,
+      583,
+      112,
+      112
+    ],
+    "action": "Click"
+  },
+  "试炼-秘境之间-跳转": {
+    "recognition": "OCR",
+    "expect": "秘境之间",
+    "roi": [
+      328,
+      245,
+      334,
+      130
+    ],
+    "action": "Click"
+  },
+  "秘境之间-永冻禁区矿场": {
+    "recognition": "TemplateMatch",
+    "template": "秘境之间-永冻禁区矿场.png",
+    "action": "Click"
+  },
+  "试炼-绝境挑战-跳转": {
+    "recognition": "OCR",
+    "expect": "绝境挑战",
+    "roi": [
+      21,
+      181,
+      679,
+      1232
+    ],
+    "action": "Click"
+  },
+  "试炼-开始挑战": {
+    "next": [
+      "点击空白处",
+      "准备",
+      "取消",
+      "离开队伍",
+      "开始匹配",
+      "战斗中"
+    ]
+  },
+  "体力不足-提示": {
+    "timeout": 3000,
+    "recognition": "TemplateMatch",
+    "template": "体力不足.png",
+    "roi": [
+      33,
+      598,
+      655,
+      404
+    ]
+  },
+  "体力按钮-点击": {
+    "recognition": "TemplateMatch",
+    "template": "加号.png",
+    "roi": [
+      640,
+      71,
+      70,
+      77
+    ],
+    "action": "Click"
+  },
+  "购买按钮-点击": {
+    "recognition": "TemplateMatch",
+    "template": "购买.png",
+    "roi": [
+      353,
+      1055,
+      334,
+      191
+    ],
+    "action": "Click"
+  },
+  "每日限购-剩余次数": {
+    "recognition": "OCR",
+    "expect": "每日限购*",
+    "roi": [390, 999, 237, 61]
+  }
+,
+  "剩余体力": {
+    "recognition": "OCR",
+    "expect": "*/60",
+    "roi": [525, 93, 144, 35]
+  }}

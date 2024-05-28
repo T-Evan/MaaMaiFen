@@ -1,0 +1,76 @@
+{
+  "首页-营地-标识": {
+    "is_sub": true,
+    "next": [
+      "返回",
+      "首页-营地-跳转"
+    ]
+  },
+  "首页-营地-跳转": {
+    "recognition": "OCR",
+    "expect": "营地",
+    "roi": [
+      54,
+      1434,
+      111,
+      136
+    ],
+    "action": "Click"
+  },
+  "营地-邮箱": {
+    "timeout": 3,
+    "recognition": "TemplateMatch",
+    "template": "营地-邮箱.png",
+    "action": "Click",
+    "next": [
+      "营地-邮箱-一键领取",
+      "返回"
+    ]
+  },
+  "营地-邮箱-一键领取": {
+    "is_sub": true,
+    "recognition": "TemplateMatch",
+    "template": "一键领取.png",
+    "action": "Click"
+  },
+  "营地-旅行活动": {
+    "recognition": "OCR",
+    "expect": "旅行活动",
+    "roi": [
+      16,
+      1328,
+      103,
+      92
+    ],
+    "action": "Click"
+  },
+  "营地-旅行活动-爱心发射": {
+    "recognition": "TemplateMatch",
+    "template": "活动-爱心心发射.png",
+    "action": "Click",
+    "next": [
+      "营地-旅行活动-爱心发射-爱心加分"
+    ]
+  },
+  "营地-旅行活动-爱心发射-爱心加分": {
+    "recognition": "TemplateMatch",
+    "template": "爱心心发射-爱心加分.png",
+    "action": "Click",
+    "next": [
+      "营地-旅行活动-爱心发射-奖励一览"
+    ]
+  },
+  "营地-旅行活动-爱心发射-奖励一览": {
+    "recognition": "TemplateMatch",
+    "template": "爱心心发射-奖励一览.png",
+    "action": "Click",
+    "next": [
+      "营地-旅行活动-爱心发射-奖励一览-一键领取"
+    ]
+  },
+  "营地-旅行活动-爱心发射-奖励一览-一键领取": {
+    "recognition": "TemplateMatch",
+    "template": "一键领取.png",
+    "action": "Click"
+  }
+}
