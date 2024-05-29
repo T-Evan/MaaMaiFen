@@ -46,7 +46,7 @@ async def main():
 
     while True:
         # 日常任务
-        await daily_task(maa_inst)
+        # await daily_task(maa_inst)
         # 试炼任务
         await shilian_task(maa_inst)
 
@@ -61,6 +61,9 @@ async def daily_task(maa_inst: Instance) -> bool:
     # 执行技能升级
     await maa_inst.run_task("首页-旅人-跳转")
     await maa_inst.run_task("技能升级")
+    # 挑战首领
+    await maa_inst.run_task("挑战首领")
+    # 冒险手册
 
     # 营地任务
     await maa_inst.run_task("首页-营地-标识")
@@ -109,7 +112,7 @@ async def mijing_task(maa_inst: Instance) -> bool:
         if fight_ct > 5:
             print(f"挑战结束，已进行{fight_ct}次，执行下一个任务")
             break
-        print("秘境任务中")
+        print(f"秘境任务中，等待挑战开始，已运行{asyncio.get_event_loop().time() - start_time}秒")
         # 休息3s
         await asyncio.sleep(3)
 
@@ -118,14 +121,11 @@ async def mijing_task(maa_inst: Instance) -> bool:
 async def juejing_task(maa_inst: Instance) -> bool:
     await maa_inst.run_task("首页-冒险-标识")
 
-    res = await maa_inst.run_task("首页-试炼-跳转")
-    if is_task_hit_v2(res, "首页-试炼-跳转"):
-        await maa_inst.run_task("试炼-绝境挑战-跳转")
-
     # 试炼任务
     fight_ct = 0
     start_time = asyncio.get_event_loop().time()
     while True:
+        await maa_inst.run_task("秘境之间-匹配页")
         res = await maa_inst.run_task("试炼-开始挑战")
         # 判断当前状态
         is_task_hit_v2(res, "开始匹配")
@@ -158,19 +158,21 @@ async def shilian_task(maa_inst: Instance):
 async def tili_goumai(maa_inst: Instance, want_buy_ct: int = 3) -> bool:
     await maa_inst.run_task("体力按钮-点击")
     res = await maa_inst.run_task("每日限购-剩余次数")
+    if res.node_details is None or len(res.node_details) == 0:
+        return False
     text = res.node_details[0].recognition.detail["best"]["text"]
-    buy_ct = int(text.replace("每日限购（", "").replace("/3）", ""))
-    # 判断体力购买
-    if buy_ct < want_buy_ct:
-        await maa_inst.run_task("购买按钮-点击")
-        is_task_hit_v2(res, "购买按钮-点击", "体力购买1次")
+    if text != "":
+        buy_ct = int(text.replace("每日限购（", "").replace("/3）", ""))
+        # 判断体力购买
+        if buy_ct < want_buy_ct:
+            await maa_inst.run_task("购买按钮-点击")
+            is_task_hit_v2(res, "购买按钮-点击", "体力购买1次")
     await maa_inst.run_task("返回-单次")
     return True
 
 
 async def wait_fight_done(maa_inst: Instance) -> bool:
     start_time = asyncio.get_event_loop().time()
-    other_task_flag = False
     while True:
         res = await maa_inst.run_task("战斗-等待结束")
         if is_task_hit_v2(res, "战败确认"):
@@ -184,16 +186,7 @@ async def wait_fight_done(maa_inst: Instance) -> bool:
             print("秘境挑战10min超时，退出")
             break
 
-        # 执行一次：行李-一键强化、旅人-技能升级
-        if not other_task_flag:
-            other_task_flag = True
-            await maa_inst.run_task("首页-行李-跳转")
-            await maa_inst.run_task("一键强化")
-            await maa_inst.run_task("首页-旅人-跳转")
-            await maa_inst.run_task("技能升级")
-            await maa_inst.run_task("首页-冒险-跳转")
-
-        print("挑战中")
+        print(f"秘境战斗中，已运行{asyncio.get_event_loop().time() - start_time}秒")
         await asyncio.sleep(3)
 
 
