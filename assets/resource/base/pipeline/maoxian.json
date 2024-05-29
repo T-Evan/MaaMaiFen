@@ -1,0 +1,185 @@
+{
+  "首页-冒险-标识": {
+    "is_sub": true,
+    "next": [
+      "返回",
+      "首页-冒险-跳转"
+    ]
+  },
+  "首页-冒险-跳转": {
+    "recognition": "TemplateMatch",
+    "template": [
+      "首页-冒险.png",
+      "首页-冒险-2.png"
+    ],
+    "threshold": [
+      0.3,
+      0.3
+    ],
+    "method": 3,
+    "action": "Click",
+    "roi": [
+      295,
+      1437,
+      115,
+      128
+    ]
+  },
+  "挑战首领": {
+    "next": [
+      "下一关卡",
+      "挑战首领-点击",
+      "新关卡-解锁"
+    ]
+  },
+  "挑战首领-点击": {
+    "recognition": "TemplateMatch",
+    "template": "挑战首领.png",
+    "action": "Click",
+    "target_offset": [
+      20,
+      20,
+      0,
+      0
+    ]
+  },
+  "新关卡-解锁": {
+    "recognition": "TemplateMatch",
+    "template": "新关卡-解锁.png",
+    "roi": [
+      545,
+      187,
+      135,
+      104
+    ],
+    "action": "Click",
+    "next": [
+      "前往",
+      "新关卡-选择"
+    ]
+  },
+  "新关卡-选择": {
+    "recognition": "TemplateMatch",
+    "template": "新关卡-选择.png",
+    "action": "Click",
+    "next": [
+      "前往"
+    ]
+  },
+  "前往": {
+    "recognition": "TemplateMatch",
+    "template": "前往.png",
+    "action": "Click"
+  },
+  "下一关卡": {
+    "recognition": "TemplateMatch",
+    "template": "下一关卡.png",
+    "action": "Click"
+  },
+  "首页-冒险手册-点击": {
+    "recognition": "TemplateMatch",
+    "template": [
+      "首页-冒险手册.png"
+    ],
+    "roi": [
+      594,
+      411,
+      116,
+      102
+    ],
+    "action": "Click",
+    "post_wait_freezes": 500,
+    "next": [
+      "冒险手册-主线",
+      "冒险手册-每日",
+      "冒险手册-每周",
+      "冒险手册-成就",
+      "返回"
+    ]
+  },
+  "冒险手册-主线": {
+    "recognition": "OCR",
+    "expect": "主线",
+    "roi": [
+      51,
+      1360,
+      175,
+      75
+    ],
+    "action": "Click",
+    "next": [
+      "领取",
+      "点击空白处",
+      "冒险手册-每日"
+    ]
+  },
+  "冒险手册-每日": {
+    "recognition": "OCR",
+    "expect": "每日",
+    "roi": [
+      217,
+      1364,
+      149,
+      68
+    ],
+    "action": "Click",
+    "next": [
+      "每日-宝箱",
+      "领取",
+      "冒险手册-每周"
+    ]
+  },
+  "冒险手册-每周": {
+    "recognition": "OCR",
+    "expect": "每周",
+    "roi": [
+      374,
+      1368,
+      139,
+      62
+    ],
+    "action": "Click",
+    "next": [
+      "每日-宝箱",
+      "领取",
+      "冒险手册-成就"
+    ]
+  },
+  "冒险手册-成就": {
+    "recognition": "OCR",
+    "expect": "成就",
+    "roi": [
+      517,
+      1370,
+      154,
+      61
+    ],
+    "action": "Click",
+    "next": [
+      "领取",
+      "点击空白处",
+      "返回"
+    ]
+  },
+  "领取": {
+    "is_sub": true,
+    "timeout": 3,
+    "recognition": "TemplateMatch",
+    "template": [
+      "领取.png"
+    ],
+    "action": "Click",
+    "next": [
+      "点击空白处"
+    ]
+  },
+  "每日-宝箱": {
+    "timeout": 3,
+    "recognition": "TemplateMatch",
+    "template": [
+      "每日-宝箱.png"
+    ],
+    "threshold": 0.8,
+    "action": "Click"
+  }
+}

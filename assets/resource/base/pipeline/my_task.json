@@ -1,6 +1,6 @@
 {
-  "日常任务": {
+  "自动任务": {
     "action": "Custom",
-    "custom_action": "DailyAct"
+    "custom_action": "AutoAction"
   }
 }

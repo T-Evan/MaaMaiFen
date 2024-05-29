@@ -37,25 +37,6 @@
     "next": [
     ]
   },
-  "首页-冒险-跳转": {
-    "recognition": "TemplateMatch",
-    "template": [
-      "首页-冒险.png",
-      "首页-冒险-2.png"
-    ],
-    "threshold": [
-      0.3,
-      0.3
-    ],
-    "method": 3,
-    "action": "Click",
-    "roi": [
-      295,
-      1437,
-      115,
-      128
-    ]
-  },
   "返回": {
     "is_sub": true,
     "threshold": 0.5,
@@ -171,7 +152,7 @@
   },
   "领取宝箱-开启宝箱": {
     "recognition": "TemplateMatch",
-    "template": "宝箱-开启.png|宝箱-开启-2.png",
+    "template": ["宝箱-开启.png","宝箱-开启-2.png"],
     "action": "Click",
     "next": [
       "返回-单次"
@@ -197,9 +178,10 @@
     ]
   },
   "点击空白处": {
-    "recognition": "OCR",
-    "expected": "点击空白处",
-    "roi": [232, 1456, 267, 125
+    "timeout": 3,
+    "recognition": "TemplateMatch",
+    "template": [
+      "点击空白处.png"
     ],
     "action": "Click"
   },
