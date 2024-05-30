@@ -21,7 +21,9 @@
       130
     ],
     "action": "Click",
-    "next": ["秘境之间-永冻禁区矿场"]
+    "next": [
+      "秘境之间-永冻禁区矿场"
+    ]
   },
   "秘境之间-永冻禁区矿场": {
     "recognition": "TemplateMatch",
@@ -37,7 +39,7 @@
   },
   "任务入口-秘境之间-匹配页": {
     "next": [
-            "任务出口-秘境-战斗中",
+      "任务出口-秘境-战斗中",
       "秘境之间-永冻禁区矿场",
       "试炼-秘境之间-跳转",
       "首页-试炼-跳转",
@@ -47,7 +49,6 @@
   "任务动作-秘境之间-准备挑战": {
     "is_sub": true,
     "next": [
-
       "体力按钮-点击",
       "任务动作-秘境之间-开始挑战"
     ]
@@ -55,7 +56,6 @@
   "任务动作-秘境之间-开始挑战": {
     "is_sub": true,
     "next": [
-      "点击空白处",
       "匹配中",
       "准备",
       "取消",
@@ -66,6 +66,7 @@
     ]
   },
   "体力按钮-点击": {
+    "timeout": 3000,
     "recognition": "TemplateMatch",
     "template": "加号.png",
     "roi": [
@@ -75,9 +76,12 @@
       77
     ],
     "action": "Click",
-    "next": ["购买按钮-点击"]
+    "next": [
+      "购买按钮-点击"
+    ]
   },
   "购买按钮-点击": {
+    "timeout": 3000,
     "recognition": "TemplateMatch",
     "template": "购买.png",
     "roi": [
@@ -87,15 +91,20 @@
       191
     ],
     "action": "Click",
-        "next": ["购买完成-返回"]
-  },  "购买完成-返回": {
-          "threshold": 0.5,
+    "next": [
+      "购买完成-返回"
+    ]
+  },
+  "购买完成-返回": {
+    "threshold": 0.5,
     "recognition": "TemplateMatch",
     "template": [
       "返回.png"
     ],
     "action": "Click",
-        "next": ["任务动作-秘境之间-开始挑战"]
+    "next": [
+      "任务动作-秘境之间-开始挑战"
+    ]
   },
   "试炼-绝境挑战-跳转": {
     "recognition": "OCR",
@@ -120,8 +129,14 @@
   },
   "任务出口-秘境-战斗中": {
     "recognition": "TemplateMatch",
-    "template": ["挑战中-麦克风.png","挑战中-麦克风-2.png"],
-    "threshold": [0.4,0.4],
+    "template": [
+      "挑战中-麦克风.png",
+      "挑战中-麦克风-2.png"
+    ],
+    "threshold": [
+      0.4,
+      0.4
+    ],
     "roi": [
       572,
       237,
@@ -149,13 +164,22 @@
       480,
       116
     ],
-    "next": ["放弃","确认"]
+    "next": [
+      "放弃",
+      "确认"
+    ]
   },
   "战斗中": {
     "timeout": 3000,
     "recognition": "TemplateMatch",
-    "template": ["挑战中-麦克风.png","挑战中-麦克风-2.png"],
-    "threshold": [0.4,0.4],
+    "template": [
+      "挑战中-麦克风.png",
+      "挑战中-麦克风-2.png"
+    ],
+    "threshold": [
+      0.4,
+      0.4
+    ],
     "roi": [
       572,
       237,
@@ -174,6 +198,44 @@
       93,
       144,
       35
+    ]
+  },
+  "开始匹配": {
+    "recognition": "TemplateMatch",
+    "template": "开始匹配.png",
+    "action": "Click",
+    "next": [
+      "体力不足-提示",
+      "体力不足-提示-无"
+    ]
+  },
+  "体力不足-提示": {
+    "timeout": 3000,
+    "recognition": "TemplateMatch",
+    "template": "体力不足.png",
+    "roi": [
+      33,
+      598,
+      655,
+      404
+    ],
+    "next": [
+      "确定"
+    ]
+  },
+  "体力不足-提示-无": {
+    "timeout": 3000,
+    "inverse": true,
+    "recognition": "TemplateMatch",
+    "template": "体力不足.png",
+    "roi": [
+      33,
+      598,
+      655,
+      404
+    ],
+    "next": [
+      "确定"
     ]
   }
 }
