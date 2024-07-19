@@ -3,11 +3,9 @@
     "timeout": 3000,
     "recognition": "TemplateMatch",
     "template": "首页-试炼.png",
+    "threshold": 0.4,
     "roi": [
-      598,
-      583,
-      112,
-      112
+      634, 476, 69, 70
     ],
     "action": "Click"
   },
@@ -15,16 +13,17 @@
     "recognition": "TemplateMatch",
     "template": "秘境之间.png",
     "roi": [
-      328,
-      245,
-      334,
-      130
+      325,57,288,153
     ],
     "action": "Click",
     "next": [
-      "秘境之间-永冻禁区矿场",
-      "试炼菜单-选择地图"
+      "秘境之间-白沙渊下的鼓动"
     ]
+  },
+  "秘境之间-白沙渊下的鼓动": {
+    "recognition": "TemplateMatch",
+    "template": "秘境之间-白沙渊下的鼓动.png",
+    "action": "Click"
   },
   "秘境之间-永冻禁区矿场": {
     "recognition": "TemplateMatch",
@@ -41,7 +40,7 @@
   "任务入口-秘境之间-匹配页": {
     "next": [
       "任务出口-秘境-战斗中",
-      "秘境之间-永冻禁区矿场",
+      "秘境之间-白沙渊下的鼓动",
       "组队中",
       "试炼-秘境之间-跳转",
       "首页-试炼-跳转",
@@ -87,10 +86,7 @@
     "recognition": "TemplateMatch",
     "template": "购买.png",
     "roi": [
-      353,
-      1055,
-      334,
-      191
+      363, 857, 240, 86
     ],
     "action": "Click",
     "next": [
@@ -133,11 +129,11 @@
     "recognition": "TemplateMatch",
     "template": [
       "挑战中-麦克风.png",
-      "挑战中-麦克风-2.png"
+      "挑战中-麦克风.png"
     ],
     "threshold": [
-      0.4,
-      0.4
+      0.6,
+      0.6
     ],
     "roi": [
       572,
@@ -240,7 +236,7 @@
       "确定"
     ]
   },
-  "试炼菜单-选择地图": {
+  "试炼菜单-选择地图-冰原": {
     "timeout": 3000,
     "recognition": "TemplateMatch",
     "template": "菜单-按钮.png",
@@ -265,9 +261,9 @@
     "timeout": 3000,
     "recognition": "TemplateMatch",
     "template": [
-      "组队中-1.png","组队中-2.png"
+      "组队中-1.png"
     ],
-    "roi": [537, 680, 180, 96],
+    "roi": [476, 487, 244, 194],
     "action": "Click"
   }
 }

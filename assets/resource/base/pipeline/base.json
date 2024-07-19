@@ -84,13 +84,7 @@
   },
   "匹配中": {
     "recognition": "TemplateMatch",
-    "template": "匹配中.png",
-    "roi": [
-      246,
-      846,
-      220,
-      88
-    ]
+    "template": "匹配中.png"
   },
   "取消": {
     "recognition": "TemplateMatch",

@@ -19,15 +19,14 @@
     "method": 3,
     "action": "Click",
     "roi": [
-      295,
-      1437,
-      115,
-      128
+      301, 1148, 122, 108
     ]
   },
   "挑战首领": {
     "next": [
       "下一关卡",
+      "新关卡-选择",
+      "前往",
       "挑战首领-点击",
       "新关卡-解锁"
     ]
@@ -36,21 +35,13 @@
     "recognition": "TemplateMatch",
     "template": "挑战首领.png",
     "action": "Click",
-    "target_offset": [
-      20,
-      20,
-      0,
-      0
+    "roi": [556, 721, 164, 118
     ]
   },
   "新关卡-解锁": {
     "recognition": "TemplateMatch",
     "template": "新关卡-解锁.png",
-    "roi": [
-      545,
-      187,
-      135,
-      104
+    "roi": [522, 162, 198, 120
     ],
     "action": "Click",
     "next": [
